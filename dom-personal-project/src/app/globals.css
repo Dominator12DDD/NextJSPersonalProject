@@ -3,3 +3,8 @@ div::after {
   display: table;
   clear: both;
 }
+.player-sections {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
