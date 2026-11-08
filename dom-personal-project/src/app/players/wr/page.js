@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import PlayerCard from "../../PlayerCard";
 
 export default function WRPage() {
     const [players, setPlayers] = useState([]);
@@ -27,16 +28,15 @@ export default function WRPage() {
 
             <div>
                 {players.map((player) => (
-                    <div key={player.id}>
-                        <img
-                            src={player.headshot}
-                            alt={player.name}
-                            width="100"
-                        />
-
-                        <h2>{player.name}</h2>
-                        <p>{player.team}</p>
-                    </div>
+                    <PlayerCard
+                        key={player.id}
+                        name={player.name}
+                        headshot={player.headshot}
+                        team={player.team}
+                        position={player.position}
+                        receivingYds={player.receivingYds}
+                        td={player.td}
+                    />
                 ))}
             </div>
         </main>

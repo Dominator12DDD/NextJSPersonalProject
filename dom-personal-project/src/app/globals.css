@@ -1,10 +1,69 @@
-div::after {
-  content: "";
-  display: table;
-  clear: both;
+body {
+    background-color: #101c2c;
+    color: #ffffff;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
+
+div::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 .player-sections {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+}
+
+.player-sections section {
+    background-color: #173b35;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #28594e;
+}
+
+.player-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    margin: 15px auto;
+    border: 1px solid #294d70;
+    border-radius: 8px;
+    background-color: #1b2d42;
+    color: #ffffff;
+    max-width: 500px;
+}
+
+.player-card-image img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+}
+
+.player-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.player-card-info h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.player-card-info p {
+    margin: 0;
+}
+
+a {
+    color: #45a9e8;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #55d6a0;
+    text-decoration: underline;
 }

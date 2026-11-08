@@ -11,12 +11,18 @@ export async function GET() {
             return item.athlete.position.abbreviation === "QB";
         })
         .map((item) => {
+            const passingStats = item.categories.find((category) => {
+                return category.name === "passing";
+            });
+
             return {
                 id: item.athlete.id,
                 name: item.athlete.displayName,
                 position: item.athlete.position.displayName,
                 team: item.athlete.teams[0]?.displayName,
-                headshot: item.athlete.headshot?.href
+                headshot: item.athlete.headshot?.href,
+                passingYds: passingStats.values[3],
+                td: passingStats.values[7]
             };
         });
 
