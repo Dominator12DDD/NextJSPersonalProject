@@ -19,15 +19,25 @@ export async function GET() {
     const wrData = await wrResponse.json();
 
     const qbs = qbData.athletes.map((item) => {
-        return item.athlete.displayName;
+        return{
+            name: item.athlete.displayName,
+            passingYds: item.categories.find((category) => {return category.name === "passing";}).values[3]
+            
+        };
     });
 
     const rbs = rbData.athletes.map((item) => {
-        return item.athlete.displayName;
+        return{
+            name: item.athlete.displayName,
+            rushingYds: item.categories.find((category) => {return category.name === "rushing";}).values[1]
+        };
     });
 
     const wrs = wrData.athletes.map((item) => {
-        return item.athlete.displayName;
+        return{
+            name: item.athlete.displayName,
+            receivingYds: item.categories.find((category) => {return category.name === "receiving";}).values[2]
+        };
     });
 
     return Response.json({

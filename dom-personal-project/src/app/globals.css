@@ -67,3 +67,103 @@ a:hover {
     color: #55d6a0;
     text-decoration: underline;
 }
+
+input {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    padding: 12px 15px;
+    margin: 15px auto;
+    border: 1px solid #294d70;
+    border-radius: 8px;
+    background-color: #1b2d42;
+    color: #ffffff;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+input::placeholder {
+    color: #a0aec0;
+}
+
+input:focus {
+    border-color: #45a9e8;
+    box-shadow: 0 0 5px #45a9e8;
+}
+
+h1 {
+    text-align: center;
+    margin: 25px 0;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 25px auto;
+}
+
+.auth-form input {
+    margin: 0;
+}
+
+.auth-form button {
+    width: 350px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #28594e;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.auth-form button:hover {
+    background-color: #367565;
+}
+
+button {
+    padding: 10px 18px;
+    border: 1px solid #28594e;
+    border-radius: 8px;
+    background-color: #173b35;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #28594e;
+}
+
+.auth-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.link-button {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 1px solid #28594e;
+    border-radius: 8px;
+    background-color: #173b35;
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.link-button:hover {
+    background-color: #28594e;
+    color: white;
+    text-decoration: none;
+}
+
+.home-auth {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+}

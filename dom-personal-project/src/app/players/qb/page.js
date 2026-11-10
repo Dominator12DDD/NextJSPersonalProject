@@ -27,7 +27,7 @@ export default function QBPage() {
 
     return (
         <main>
-            <Link href="/">
+            <Link href="/" className="link-button">
                 ← Back to Home
             </Link>
             <h1>Quarterbacks</h1>
@@ -42,6 +42,7 @@ export default function QBPage() {
                 {filteredPlayers.map((player) => (
                     <PlayerCard
                         key={player.id}
+                        id={player.id}
                         name={player.name}
                         headshot={player.headshot}
                         team={player.team}

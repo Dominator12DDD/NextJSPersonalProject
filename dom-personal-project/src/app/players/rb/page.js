@@ -6,6 +6,7 @@ import PlayerCard from "../../PlayerCard";
 
 export default function RBPage() {
     const [players, setPlayers] = useState([]);
+    const [search, setSearch] = useState("");
 
     useEffect(() => {
         async function getPlayers() {
@@ -16,18 +17,29 @@ export default function RBPage() {
         getPlayers();
     }, []);
 
+    const filteredPlayers = players.filter((player) => {
+        return player.name.toLowerCase().includes(search.toLowerCase());
+    });
+
     return (
         <main>
-            <Link href="/">
+            <Link href="/" className="link-button">
                 ← Back to Home
             </Link>
 
             <h1>Running Backs</h1>
+            <input
+                type="text"
+                placeholder="Search running backs..."
+                value={search}
+                onChange={(event) => setSearch(event.target.value)}
+            />
 
             <div>
-                {players.map((player) => (
+                {filteredPlayers.map((player) => (
                     <PlayerCard
                         key={player.id}
+                        id={player.id}
                         name={player.name}
                         headshot={player.headshot}
                         team={player.team}
